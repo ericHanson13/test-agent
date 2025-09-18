@@ -25,14 +25,6 @@ agent-package:
       version: 1.0.4
       whitelist: ""
       path: Sema4.ai/pdf
-    mcp-servers:
-    - name: Neon MCP
-      transport: streamable-http
-      url: https://mcp.neon.tech/mcp
-      headers:
-        Authorization:
-          type: string
-          value: Bearer napi_iaknzjbu4bk4rq0uaqkx9lx8fj620wp1m69zqzpaeg1n39ef1k72d13aysmayh7u
     knowledge: []
     metadata:
       mode: conversational
