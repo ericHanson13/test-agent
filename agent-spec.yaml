@@ -1,0 +1,49 @@
+agent-package:
+  spec-version: v2
+  agents:
+  - name: InvoiceExtractor Pro
+    description: An AI-powered agent that efficiently extracts and organizes key information
+      from various invoice formats, streamlining the data entry and financial analysis
+      process.
+    model:
+      provider: Amazon
+      name: anthropic.claude-3-5-sonnet-20240620-v1:0
+    version: 0.0.1
+    architecture: agent
+    reasoning: disabled
+    runbook: runbook.md
+    action-packages:
+    - name: Excel
+      organization: Sema4.ai
+      type: folder
+      version: 4.0.6
+      whitelist: ""
+      path: Sema4.ai/excel
+    - name: PDF
+      organization: Sema4.ai
+      type: folder
+      version: 1.0.4
+      whitelist: ""
+      path: Sema4.ai/pdf
+    mcp-servers:
+    - name: Neon MCP
+      transport: streamable-http
+      url: https://mcp.neon.tech/mcp
+      headers:
+        Authorization:
+          type: string
+          value: Bearer napi_iaknzjbu4bk4rq0uaqkx9lx8fj620wp1m69zqzpaeg1n39ef1k72d13aysmayh7u
+    knowledge: []
+    metadata:
+      mode: conversational
+  exclude:
+  - ./.git/**
+  - ./.vscode/**
+  - ./devdata/**
+  - ./output/**
+  - ./venv/**
+  - ./.venv/**
+  - ./**/.env
+  - ./**/.DS_Store
+  - ./**/*.pyc
+  - ./*.zip
